@@ -47,9 +47,7 @@ app.use("/auth", handleuserRoute);
 app.use("/user", restrictAccess, userRoute);
 app.use("/", staticRoute);
 
+const hostname = '0.0.0.0';
 
-const port = 8001; // or any other port you prefer
-const hostname = 'localhost';
-
-// const port = process.env.PORT || 8001;
+const port = process.env.PORT || 8001;
 httpsConfig.createServer(app, port, hostname);
